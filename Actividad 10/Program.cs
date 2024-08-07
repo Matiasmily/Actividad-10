@@ -19,12 +19,21 @@ do
                 objetoProductos.AgregarProductos(listaProductos);
                  break;
             case 2:
+                objetoProductos.MostrarProductos(listaProductos);
                 break;
             case 3:
+                objetoProductos.Buscar(listaProductos);
                 break;
             case 4:
+                Console.WriteLine("\nUsted está saliendo del programa...");
+                Console.WriteLine("Presione Enter para continuar");
+                Console.ReadKey();
+                menu = false;
                 break;
             default:
+                Console.WriteLine("\nIngrese una opción válida");
+                Console.WriteLine("Presione Enter para continuar");
+                Console.ReadKey();
                 break;
         }
     }

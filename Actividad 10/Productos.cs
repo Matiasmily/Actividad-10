@@ -47,7 +47,7 @@ namespace Actividad_10
             Console.Write("ID: ");
             string id = Console.ReadLine()??"";
             Console.Write("Nombre: ");
-            string nombre = Console.ReadLine() ?? "";
+            string nombre = Console.ReadLine() ?? "".ToUpper() ;
             Console.Write("Marca: ");
             string marca = Console.ReadLine() ?? "";
             Console.Write("Precio: ");
@@ -113,6 +113,42 @@ namespace Actividad_10
 
             } while (menuproducto);
         }
+        public void MostrarProductos(List<Productos> listaProductos)
+        {
+            Console.Clear();
+            Console.WriteLine("--- VER TODOS LOS PRODUCTOS ---");
+            foreach(Productos producto in listaProductos)
+            {
+                Console.WriteLine("--------------------------------------------------------------------------------");
+                Console.WriteLine($"ID: {producto.ID}\nNombre: {producto.Nombre}\nMarca: {producto.Marca}\nPrecio: {producto.Precio}");
+                Console.WriteLine("--------------------------------------------------------------------------------");
+
+            }
+            Console.WriteLine("\nPresione Enter para continuar...");
+            Console.ReadKey();
+        }
+        public void Buscar(List<Productos> listaProductos)
+        {
+            Console.Clear();
+            Console.WriteLine("--- BUSCAR PRODUCTO ---");
+            Console.Write("Nombre: ");
+            string nombre = Console.ReadLine() ?? "".ToUpper();
+            Productos? buscarProducto = listaProductos.Find(x => x.Nombre == nombre);
+            if (buscarProducto != null)
+            {
+                Console.WriteLine("\nProducto Encontrado");
+                Console.WriteLine($"\nID: {buscarProducto.ID}\nNombre: {buscarProducto.Nombre} \nMarca:  {buscarProducto.Marca} \nPrecio:  {buscarProducto.Precio}");
+                Console.WriteLine("\nPresione Enter para continuar...");
+                Console.ReadKey();
+            }
+            else
+            {
+                Console.WriteLine("No se ha encontrado ningun producto con ese nombre");
+                Console.WriteLine("Presione Enter para continuar...");
+                Console.ReadKey();
+            }
+        }
+
     }
     
 }
