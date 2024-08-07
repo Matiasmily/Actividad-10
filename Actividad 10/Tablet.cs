@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Actividad_10
 {
-    internal class Tablet 
+    public class Tablet : Productos
     {
+        public Tablet(List<Productos> listaProductos) : base(listaProductos)
+        {
+        }
     }
 }

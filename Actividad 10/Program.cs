@@ -16,39 +16,7 @@ do
         switch (opcion)
         {
             case 1:
-                Console.WriteLine("--- AGREGAR NUEVOS PRODUCTOS ----");
-                Console.WriteLine("Qué producto desea agregar?");
-                objetoProductos.MenuProducto();
-                int opcionDos = int.Parse(Console.ReadLine() ?? "");
-                bool menuproducto = true;
-                do
-                {
-                    try
-                    {
-                        switch (opcion)
-                        {
-                            case 1:
-                                Telefono.AgregarTelefono(listaProductos);
-                                break;
-                            case 2:
-                                break;
-                            case 3:
-                                break;
-                            case 4:
-                                break;
-                        }
-
-                    }
-                    catch (FormatException)
-                    {
-                        Console.WriteLine("Error: Ingrese una opción válida..");
-                        Console.WriteLine("Presione Enter para continuar...");
-                        Console.ReadKey();
-                    }
-
-                } while (menuproducto);
-        
-
+                objetoProductos.AgregarProductos(listaProductos);
                  break;
             case 2:
                 break;
